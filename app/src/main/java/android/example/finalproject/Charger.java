@@ -13,6 +13,8 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -30,6 +32,10 @@ public class Charger extends FragmentActivity implements OnMapReadyCallback {
     private LocationListener locationListener;
     private Object Bitmap;
 
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +51,7 @@ public class Charger extends FragmentActivity implements OnMapReadyCallback {
         locationListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
-                 //Toast.makeText(Charger.this, location.toString(), Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
@@ -66,13 +72,7 @@ public class Charger extends FragmentActivity implements OnMapReadyCallback {
 
         if (Build.VERSION.SDK_INT < 23) {
             if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ) {
-                // TODO: Consider calling
-                //    Activity#requestPermissions
-                // here to request the missing permissions, and then overriding
-                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                //                                          int[] grantResults)
-                // to handle the case where the user grants the permission. See the documentation
-                // for Activity#requestPermissions for more details.
+
                 return;
             }
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
@@ -84,19 +84,21 @@ public class Charger extends FragmentActivity implements OnMapReadyCallback {
             }
         }
 
+
+
     }
 
 
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-
+        Toast.makeText(this, "Map is ready", Toast.LENGTH_SHORT).show();
         map = googleMap;
 
         LatLng Ottawa = new LatLng(45.4215, -75.6972);
         map.addMarker(new MarkerOptions().position(Ottawa).title("Ottawa"));
         map.moveCamera(CameraUpdateFactory.newLatLng(Ottawa));
-        //Toast.makeText(this, map.toString(), Toast.LENGTH_SHORT).show();
+
 
     }
 
