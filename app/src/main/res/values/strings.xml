@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Final Project</string>
+    <string name="textView_charge">Electric Car Charging Station finder</string>
+    <string name="textView_currency">Foreign currency conversion </string>
+    <string name="textView_menu">Recipe search engine</string>
+    <string name="textView_news">News Api.org headlines </string>
 </resources>

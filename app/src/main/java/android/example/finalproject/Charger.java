@@ -7,6 +7,9 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
+import android.app.SearchManager;
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -14,7 +17,11 @@ import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -31,7 +38,6 @@ public class Charger extends FragmentActivity implements OnMapReadyCallback {
     private LocationManager locationManager;
     private LocationListener locationListener;
     private Object Bitmap;
-
 
 
 
@@ -97,11 +103,10 @@ public class Charger extends FragmentActivity implements OnMapReadyCallback {
 
         LatLng Ottawa = new LatLng(45.4215, -75.6972);
         map.addMarker(new MarkerOptions().position(Ottawa).title("Ottawa"));
-        map.moveCamera(CameraUpdateFactory.newLatLng(Ottawa));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(Ottawa,15));
 
 
     }
-
 
 
     @Override
@@ -116,5 +121,6 @@ public class Charger extends FragmentActivity implements OnMapReadyCallback {
 
         }
     }
+
 
 }
