@@ -4,4 +4,8 @@
     <string name="textView_currency">Foreign currency conversion </string>
     <string name="textView_menu">Recipe search engine</string>
     <string name="textView_news">News Api.org headlines </string>
+    <string name="menu_title_charger">Electric Car Charging Station finder</string>
+    <string name="menu_title_currency">Foreign currency conversion</string>
+    <string name="menu_title_recipe">Recipe search engine</string>
+    <string name="menu_title_news">News Api.org headlines</string>
 </resources>

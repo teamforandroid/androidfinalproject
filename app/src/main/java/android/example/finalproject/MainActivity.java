@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.Toast;
+import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +23,39 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        Toolbar toolbar = findViewById(R.id.toolbar_main);
+        setSupportActionBar(toolbar);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId())
+        {
+            //what to do when the menu item is selected:
+            case R.id.menu_charger:
+                startActivity(new Intent(MainActivity.this, Charger.class));
+                break;
+            case R.id.menu_recipe:
+                startActivity(new Intent(MainActivity.this, Recipe.class));
+                break;
+            case R.id.menu_currency:
+                startActivity(new Intent(MainActivity.this, Currency.class));
+                break;
+            case R.id.menu_news:
+                startActivity(new Intent(MainActivity.this, News.class));
+                break;
+            default:
+                break;
+        }
+        return true;
     }
 
 

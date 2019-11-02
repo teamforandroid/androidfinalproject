@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_charger"
+        android:icon="@drawable/charger"
+        android:title="@string/menu_title_charger"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/menu_recipe"
+        android:icon="@drawable/recipe"
+        android:title="@string/menu_title_recipe"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/menu_currency"
+        android:icon="@drawable/currency"
+        android:title="@string/menu_title_currency"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/menu_news"
+        android:icon="@drawable/news"
+        android:title="@string/menu_title_news"
+        app:showAsAction="always"/>
+</menu>

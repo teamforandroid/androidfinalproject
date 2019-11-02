@@ -6,18 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="106dp"
+        android:layout_width="59dp"
+        android:layout_height="79dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
 
-        android:layout_marginStart="73dp"
-        android:layout_marginLeft="73dp"
-        android:layout_marginTop="79dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginLeft="41dp"
+        android:layout_marginTop="76dp"
         android:background="@drawable/charger"
         android:onClick="Charger"
         tools:ignore="OnClick" />
@@ -28,21 +35,21 @@
         android:layout_height="68dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="107dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginTop="91dp"
+        android:layout_marginEnd="33dp"
         android:text="@string/textView_charge"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="101dp"
-        android:layout_height="77dp"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
 
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="61dp"
-        android:layout_marginLeft="-100dp"
-        android:layout_marginTop="228dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginLeft="-66dp"
+        android:layout_marginTop="191dp"
         android:layout_toRightOf="@id/button1"
         android:background="@drawable/recipe"
         android:onClick="Recipe"
@@ -54,20 +61,20 @@
         android:layout_height="66dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="241dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginTop="184dp"
+        android:layout_marginEnd="34dp"
         android:text="@string/textView_menu"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="73dp"
-        android:layout_height="123dp"
+        android:layout_width="54dp"
+        android:layout_height="88dp"
         android:layout_below="@id/button1"
 
         android:layout_alignParentStart="true"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="164dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="121dp"
         android:background="@drawable/currency"
         android:onClick="Currency"
         tools:ignore="OnClick" />
@@ -78,21 +85,22 @@
         android:layout_height="74dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="390dp"
-        android:layout_marginEnd="50dp"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="290dp"
+        android:layout_marginEnd="32dp"
         android:text="@string/textView_currency"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="87dp"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/button2"
         android:layout_alignParentStart="true"
 
         android:layout_centerVertical="true"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="217dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="164dp"
         android:background="@drawable/news"
         android:onClick="News"
         tools:ignore="OnClick" />
@@ -103,8 +111,8 @@
         android:layout_height="62dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="532dp"
-        android:layout_marginEnd="31dp"
+        android:layout_marginTop="404dp"
+        android:layout_marginEnd="12dp"
         android:text="@string/textView_news"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
