@@ -8,4 +8,20 @@
     <string name="menu_title_currency">Foreign currency conversion</string>
     <string name="menu_title_recipe">Recipe search engine</string>
     <string name="menu_title_news">News Api.org headlines</string>
+
+    <string name="saved">Saved Articles</string>
+    <string name="title_saved">Saved Article</string>
+    <string name="title_save">Save</string>
+    <string name="title_delete">Delete</string>
+    <string name="help">Help</string>
+    <string name="button_help">I Like It!</string>
+    <string name="button_alert">Bug Alert!</string>
+    <string name="textView_message">Leave Message</string>
+    <string name="textView_logo">LOGO</string>
+    <string name="detail_button">View Detail</string>
+    <string name="help_detail">Version 0.9.\n
+         \nNews Headlines Api App By Jicheng Hu
+         \nApp displays recent news and the news can be saved.\n
+         \nThe user can search for articles related to a given topic.</string>
+
 </resources>

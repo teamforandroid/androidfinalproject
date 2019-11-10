@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="textView_charge">Electric Car Charging Station finder</string>
+    <string name="textView_currency">Foreign currency conversion </string>
+    <string name="textView_menu">Recipe search engine</string>
+    <string name="textView_news">News Api.org headlines </string>
+    <string name="menu_title_charger">Electric Car Charging Station finder</string>
+    <string name="menu_title_currency">Foreign currency conversion</string>
+    <string name="menu_title_recipe">Recipe search engine</string>
+    <string name="menu_title_news">News Api.org headlines</string>
+
+    <string name="app_name">新闻头条</string>
+    <string name="saved">保存的文章</string>
+    <string name="title_saved">保存的文章</string>
+    <string name="title_save">保存</string>
+    <string name="title_delete">删除</string>
+    <string name="help">帮助</string>
+    <string name="button_help">我喜欢！</string>
+    <string name="button_alert">错误警报！</string>
+    <string name="textView_message">请留言</string>
+    <string name="textView_logo">商标</string>
+    <string name="detail_button">详细信息</string>
+    <string name="help_detail">版本 0.9.\n
+         \n新闻头条 Jicheng Hu
+         \n应用程序显示最近的新闻，可以保存新闻。\n
+         \n用户可以搜索与给定主题相关的文章。</string>
+
+
+
+</resources>

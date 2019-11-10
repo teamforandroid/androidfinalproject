@@ -29,6 +29,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.gson.Gson;
@@ -143,10 +144,15 @@ public class Charger extends FragmentActivity implements OnMapReadyCallback {
                         map.put(KEY_LATITUDE, json2.optString(KEY_LATITUDE));
                         map.put(KEY_LONGITUDE, json2.optString(KEY_LONGITUDE));
 
-                        chargerList.add(map);
+
                         Log.v("Title: ", KEY_TITLE);
-                        //LatLng position = new LatLng(Double.parseDouble(KEY_LATITUDE), Double.parseDouble(KEY_LONGITUDE));
-                        //googleMap.addMarker(new MarkerOptions().position(position));
+                        Log.v("Latitude: ", KEY_LATITUDE);
+                        Log.v("Longitude: ", KEY_LONGITUDE);
+
+                        LatLng position = new LatLng(Double.parseDouble(KEY_LATITUDE), Double.parseDouble(KEY_LONGITUDE));
+                        googleMap.addMarker(new MarkerOptions().position(position).title(KEY_TITLE).snippet("snippet").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_charging)));
+
+                        chargerList.add(map);
 
                     }
                 } catch (JSONException e) {
