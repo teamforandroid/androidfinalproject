@@ -6,7 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class ChargerStationDetail extends AppCompatActivity {
     Toolbar toolbar;
@@ -39,6 +43,14 @@ public class ChargerStationDetail extends AppCompatActivity {
         textview_lat.setText("Charger Station latitude: "+latitude);
         textview_lon.setText("Charger Station longitude: "+longitude);
         textview_phone.setText("Charger Station telephone number: "+telephone);
+
+
+        Toast.makeText(getApplicationContext(), "Above are the charger station information in details", Toast.LENGTH_LONG).show();
+
+        Snackbar.make(findViewById(R.id.myRelativeLayout), R.string.textView_charge,
+                Snackbar.LENGTH_SHORT)
+                .show();
+
 
     }
 }
