@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, Currency.class));
                 break;
             case R.id.menu_news:
-                startActivity(new Intent(MainActivity.this, News.class));
+                startActivity(new Intent(MainActivity.this, News_MainActivity.class));
                 break;
             default:
                 break;
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void News(View view) {
-        Intent int4 = new Intent(this, News.class);
+        Intent int4 = new Intent(this, News_MainActivity.class);
         startActivity(int4);
 
     }

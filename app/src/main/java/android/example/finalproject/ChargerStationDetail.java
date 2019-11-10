@@ -2,9 +2,15 @@ package android.example.finalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +24,9 @@ public class ChargerStationDetail extends AppCompatActivity {
     Button button;
     Intent intent;
     String title, latitude, longitude, telephone;
+    SearchManager searchManager;
+    SearchView search;
+    Charger_MyDatabaseOpenHelper mydb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +37,9 @@ public class ChargerStationDetail extends AppCompatActivity {
         textview_lon = findViewById(R.id.textView_detail3);
         textview_phone = findViewById(R.id.textView_detail4);
 
-        toolbar = findViewById(R.id.toolbar_chargerstations);
+        toolbar = findViewById(R.id.toolbar_detail);
         setSupportActionBar(toolbar);
+        mydb = new Charger_MyDatabaseOpenHelper(this);
 
         button = findViewById(R.id.button_detail);
 
@@ -52,5 +62,45 @@ public class ChargerStationDetail extends AppCompatActivity {
                 .show();
 
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.charger_menu_detail, menu);
+        return super.onCreateOptionsMenu(menu);
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.charger_save:
+                addChargerData(title, latitude, longitude, telephone);
+                return true;
+            case R.id.charger_saved:
+                Intent saveIntent = new Intent(this, Charger_savedActivity.class);
+                this.startActivity(saveIntent);
+                return true;
+
+                case R.id.charger_help:
+                //Intent myIntent = new Intent(this, News_Help.class);
+                //this.startActivity(myIntent);
+                return true;
+
+            default:
+                return super.onContextItemSelected(item);
+        }
+    }
+
+    public void addChargerData(String title, String latitude, String longitude, String telephone) {
+        boolean insertData = mydb.addChargerData(title, latitude, longitude, telephone);
+        if (insertData) {
+
+            Toast.makeText(getApplicationContext(), "Charger Station Data saved", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(getApplicationContext(), "Wrong, not saved", Toast.LENGTH_LONG).show();
+        }
     }
 }

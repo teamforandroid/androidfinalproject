@@ -202,8 +202,8 @@ public class Charger_stations extends AppCompatActivity {
                 return true;
 
             case R.id.charger_saved:
-                //Intent saveIntent = new Intent(this, Charger_SavedActivity.class);
-                //this.startActivity(saveIntent);
+                Intent saveIntent = new Intent(this, Charger_savedActivity.class);
+                this.startActivity(saveIntent);
                 return true;
             case R.id.charger_help:
                 //Intent myIntent = new Intent(this, News_Help.class);
