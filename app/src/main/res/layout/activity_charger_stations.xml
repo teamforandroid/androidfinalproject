@@ -16,6 +16,12 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme" />
 
+    <ProgressBar
+        android:id="@+id/charger_progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
     <ListView
         android:id="@+id/chargerstations_listview"
         android:layout_width="match_parent"

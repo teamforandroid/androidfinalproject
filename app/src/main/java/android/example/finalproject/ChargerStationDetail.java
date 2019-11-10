@@ -1,9 +1,11 @@
 package android.example.finalproject;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -22,8 +24,8 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class ChargerStationDetail extends AppCompatActivity {
     Toolbar toolbar;
-    TextView textview_title, textview_lat, textview_lon, textview_phone;
-    Button button_googlemap;
+    TextView textview_title, textview_lat, textview_lon, textview_phone, textview_alert;
+    Button button_googlemap, button_alert;
     Intent intent;
     String title, latitude, longitude, telephone;
     SearchManager searchManager;
@@ -39,11 +41,14 @@ public class ChargerStationDetail extends AppCompatActivity {
         textview_lon = findViewById(R.id.textView_detail3);
         textview_phone = findViewById(R.id.textView_detail4);
 
+        textview_alert = findViewById(R.id.charger_alert);
+
         toolbar = findViewById(R.id.toolbar_detail);
         setSupportActionBar(toolbar);
         mydb = new Charger_MyDatabaseOpenHelper(this);
 
         button_googlemap = findViewById(R.id.button_googlemap);
+        button_alert = findViewById(R.id.button_like);
 
         Intent intent = getIntent();
         title = intent.getStringExtra("title");
@@ -56,7 +61,37 @@ public class ChargerStationDetail extends AppCompatActivity {
         textview_lon.setText("Charger Station longitude: "+longitude);
         textview_phone.setText("Charger Station telephone number: "+telephone);
 
-        button_googlemap.setOnClickListener(new View.OnClickListener() {
+        button_alert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(ChargerStationDetail.this);
+                builder.setCancelable(true);
+                builder.setTitle("I Like It Alert");
+                builder.setMessage("I like this charge station!");
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                        textview_alert.setVisibility(View.VISIBLE);
+
+                    }
+
+                });
+
+                builder.show();
+
+            }
+
+        });
+
+                button_googlemap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Uri gmmIntentUri = Uri.parse("geo:latitude,longitude");
@@ -68,14 +103,16 @@ public class ChargerStationDetail extends AppCompatActivity {
         });
 
 
-        Toast.makeText(getApplicationContext(), "Above are the charger station information in details", Toast.LENGTH_LONG).show();
 
-        Snackbar.make(findViewById(R.id.myRelativeLayout), R.string.textView_charge,
-                Snackbar.LENGTH_SHORT)
-                .show();
+                Toast.makeText(getApplicationContext(), "Above are the charger station information in details", Toast.LENGTH_LONG).show();
+
+                Snackbar.make(findViewById(R.id.myRelativeLayout), R.string.textView_charge,
+                        Snackbar.LENGTH_SHORT)
+                        .show();
 
 
-    }
+            }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

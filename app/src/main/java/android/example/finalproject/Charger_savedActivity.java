@@ -30,6 +30,7 @@ public class Charger_savedActivity extends AppCompatActivity {
     Button deleteButton, buttonshowmap;
     ArrayList<HashMap<String, String>> chargerList = new ArrayList<>();
     HashMap<String, String> data;
+    String latitude, longitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +78,8 @@ public class Charger_savedActivity extends AppCompatActivity {
         listStations.setAdapter(myAdapter);
         //listStations.invalidateViews();
         //listStations.refreshDrawableState();
+
+
     }
 
     public class ChargerAdapter extends BaseAdapter {
@@ -116,10 +119,13 @@ public class Charger_savedActivity extends AppCompatActivity {
             rowLongitude.setText(data.get(Charger_stations.KEY_LONGITUDE));
             rowTelephone.setText(data.get(Charger_stations.KEY_CONTACTTELEPHONE1));
 
-          /*  buttonshowmap.setOnClickListener(new View.OnClickListener() {
+            latitude = data.get(Charger_stations.KEY_LATITUDE);
+            longitude = data.get(Charger_stations.KEY_LONGITUDE);
+
+           /* buttonshowmap.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Uri gmmIntentUri = Uri.parse("geo:data.get(Charger_stations.KEY_LATITUDE),data.get(Charger_stations.KEY_LONGITUDE)");
+                    Uri gmmIntentUri = Uri.parse("geo:latitude,longitude");
                     Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                     mapIntent.setPackage("com.google.android.apps.maps");
                     startActivity(mapIntent);

@@ -64,7 +64,6 @@
         android:text="telephone" />
 
 
-
     <Button
         android:id="@+id/button_googlemap"
         android:layout_width="wrap_content"
@@ -72,8 +71,25 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="163dp"
-        android:layout_marginTop="186dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="191dp"
         android:text="Google Map" />
+
+    <Button
+        android:id="@+id/button_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="190dp"
+        android:layout_marginEnd="81dp"
+        android:text="I like it!" />
+
+    <TextView
+        android:id="@+id/charger_alert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:text="Alert received!" />
 
 </RelativeLayout>

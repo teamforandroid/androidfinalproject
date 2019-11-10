@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,6 +41,7 @@ public class Charger_stations extends AppCompatActivity {
     BaseAdapter myAdapter;
     SearchManager searchManager;
     SearchView search;
+    ProgressBar progressBar;
 
     private String weburl = "https://api.openchargemap.io/v3/poi/?output=json&countrycode=CA&latitude=45.347571&longitude=-75.756140&maxresults=10";
 
@@ -56,6 +58,9 @@ public class Charger_stations extends AppCompatActivity {
         setContentView(R.layout.activity_charger_stations);
 
         listview = findViewById(R.id.chargerstations_listview);
+        progressBar = findViewById(R.id.charger_progressbar);
+        listview.setEmptyView(progressBar);
+
         toolbar = findViewById(R.id.toolbar_chargerstations);
         setSupportActionBar(toolbar);
 
