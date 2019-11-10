@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,7 +27,7 @@ public class Charger_savedActivity extends AppCompatActivity {
     Toolbar toolbar;
     ListView listStations;
     int positionClicked = 0;
-    Button deleteButton;
+    Button deleteButton, buttonshowmap;
     ArrayList<HashMap<String, String>> chargerList = new ArrayList<>();
     HashMap<String, String> data;
 
@@ -42,6 +43,8 @@ public class Charger_savedActivity extends AppCompatActivity {
         //get a database:
         mydb = new Charger_MyDatabaseOpenHelper(this);
         SQLiteDatabase db = mydb.getWritableDatabase();
+
+        buttonshowmap = findViewById(R.id.button_showmap);
 
         //query all the results from the database:
         String[] columns = {Charger_MyDatabaseOpenHelper.COL_ID, Charger_MyDatabaseOpenHelper.COL_TITLE,
@@ -112,6 +115,17 @@ public class Charger_savedActivity extends AppCompatActivity {
             rowLatitude.setText(data.get(Charger_stations.KEY_LATITUDE));
             rowLongitude.setText(data.get(Charger_stations.KEY_LONGITUDE));
             rowTelephone.setText(data.get(Charger_stations.KEY_CONTACTTELEPHONE1));
+
+          /*  buttonshowmap.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Uri gmmIntentUri = Uri.parse("geo:data.get(Charger_stations.KEY_LATITUDE),data.get(Charger_stations.KEY_LONGITUDE)");
+                    Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                    mapIntent.setPackage("com.google.android.apps.maps");
+                    startActivity(mapIntent);
+
+                }
+            });*/
 
             deleteButton.setOnClickListener(new View.OnClickListener() {
                 @Override

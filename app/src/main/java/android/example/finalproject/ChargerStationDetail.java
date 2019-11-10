@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -21,7 +23,7 @@ import com.google.android.material.snackbar.Snackbar;
 public class ChargerStationDetail extends AppCompatActivity {
     Toolbar toolbar;
     TextView textview_title, textview_lat, textview_lon, textview_phone;
-    Button button;
+    Button button_googlemap;
     Intent intent;
     String title, latitude, longitude, telephone;
     SearchManager searchManager;
@@ -41,7 +43,7 @@ public class ChargerStationDetail extends AppCompatActivity {
         setSupportActionBar(toolbar);
         mydb = new Charger_MyDatabaseOpenHelper(this);
 
-        button = findViewById(R.id.button_detail);
+        button_googlemap = findViewById(R.id.button_googlemap);
 
         Intent intent = getIntent();
         title = intent.getStringExtra("title");
@@ -53,6 +55,17 @@ public class ChargerStationDetail extends AppCompatActivity {
         textview_lat.setText("Charger Station latitude: "+latitude);
         textview_lon.setText("Charger Station longitude: "+longitude);
         textview_phone.setText("Charger Station telephone number: "+telephone);
+
+        button_googlemap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri gmmIntentUri = Uri.parse("geo:latitude,longitude");
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                startActivity(mapIntent);
+
+            }
+        });
 
 
         Toast.makeText(getApplicationContext(), "Above are the charger station information in details", Toast.LENGTH_LONG).show();
