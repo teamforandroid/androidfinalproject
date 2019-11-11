@@ -8,4 +8,12 @@
     <string name="menu_title_currency">Foreign currency conversion</string>
     <string name="menu_title_recipe">Recipe search engine</string>
     <string name="menu_title_news">News Api.org headlines</string>
+
+    <string name="text_firstCurrency">Input amount</string>
+    <string name="text_secondCurrency">Output amount</string>
+    <string name="button_convert">Convert Currency</string>
+    <string name="text_from">Convert From：</string>
+    <string name="text_to">Convert TO：</string>
+
+
 </resources>
