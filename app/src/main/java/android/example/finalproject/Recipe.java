@@ -11,4 +11,5 @@ public class Recipe extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe);
     }
+
 }

@@ -8,4 +8,12 @@
     <string name="menu_title_currency">Foreign currency conversion</string>
     <string name="menu_title_recipe">Recipe search engine</string>
     <string name="menu_title_news">News Api.org headlines</string>
+
+
+
+    <string name="recipeForSearch"> please input </string>
+    <string name="RecipeSearch">Search</string>
+    <string name="recipe_title">Recipe Title</string>
+    <string name="recipeLink">You can find recipe here </string>
+    <string name="saveRecipeButton">Save favourites recipes </string>
 </resources>
