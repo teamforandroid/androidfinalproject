@@ -6,29 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".Recipe">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        />
 
     <EditText
         android:id="@+id/recipeItemText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="5dp"
-        android:layout_toLeftOf="@id/searchItemButton"
+        android:layout_below="@+id/toolbar"
+        android:layout_toRightOf="@id/searchItemButton"
         android:hint="@string/recipeForSearch"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:layout_marginEnd="0dp"/>
 
     <Button
         android:id="@+id/searchItemButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="0dp"
+        android:layout_below="@+id/toolbar"
         android:text="@string/RecipeSearch" />
+
+
 
     <ListView
         android:id="@+id/recipeList"

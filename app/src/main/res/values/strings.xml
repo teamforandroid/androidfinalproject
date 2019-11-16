@@ -16,4 +16,8 @@
     <string name="recipe_title">Recipe Title</string>
     <string name="recipeLink">You can find recipe here </string>
     <string name="saveRecipeButton">Save favourites recipes </string>
+    <string name="deleteRecipe">Delete</string>
+    <string name="exitButton">Go Home</string>
+    <string name="deleteFavourites">Delete</string>
+
 </resources>

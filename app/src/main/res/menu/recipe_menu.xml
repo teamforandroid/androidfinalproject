@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/about"
+        android:title="Recipezheyuan "
+        android:icon="@drawable/recipeHelp"
+        android:orderInCategory="103"
+        app:showAsAction="never" />
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="30dp"/>
+
+    <item android:id="@+id/ChoiceGoHome"
+        android:title="Three"
+        android:icon="@drawable/iconRecipeGoHome"
+        android:orderInCategory="103"
+        app:showAsAction="always" />
+</menu>
