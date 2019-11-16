@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/image1"
+        android:layout_width="307dp"
+        android:layout_height="194dp"
+        android:layout_gravity="center"
+        android:src="@drawable/news_person" />
+
+    <TextView
+        android:id="@+id/help_show_text1"
+        android:layout_width="match_parent"
+        android:layout_height="141dp"
+        android:text="@string/help_detail" />
+
+    <TextView
+        android:id="@+id/help_show_text2"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:text="@string/help_detail2" />
+
+    <TextView
+        android:id="@+id/help_show_text3"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:text="" />
+
+    <EditText android:id="@+id/view_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
