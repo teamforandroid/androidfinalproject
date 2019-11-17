@@ -74,8 +74,7 @@ public class Recipe extends AppCompatActivity {
                goToDetailPage(foodList.get(position));
             }
         });
-
-        ////to set the progressBar’s visibility
+////to set the progressBar’s visibility
         recipeProgress = (ProgressBar) findViewById(R.id.progress);
         recipeProgress.setVisibility(View.VISIBLE);
 
@@ -85,6 +84,9 @@ public class Recipe extends AppCompatActivity {
             public void onClick(View view) {
                 keyword=recipeItemText.getText().toString();
                 if(keyword!=null || !keyword.isEmpty()){
+
+  /////      //show the Snackbar.
+    //            Snackbar.make(getApplicationContext(), "start to search", Snackbar.LENGTH_LONG).show();
                     new RecipeQuery().execute();
                 }else {
 /////Show the toast for remind immediately????????
@@ -245,6 +247,10 @@ public class Recipe extends AppCompatActivity {
         void notifyAdapter(){
         myAdapter.notifyDataSetChanged();
         }
+
+
+
+ //***/ to recipe detail page
 
 
 }

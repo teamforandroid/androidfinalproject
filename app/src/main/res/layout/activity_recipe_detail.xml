@@ -9,22 +9,14 @@
         android:layout_height="wrap_content"
         android:text="@string/recipe_title"
         android:textStyle="bold"
-        android:id="@+id/recipeTitle"
+        android:id="@+id/recipeTitleValue"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="60dp"
         android:layout_alignParentTop="true"
-
         />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:id="@+id/recipeTitleValue"
-        android:layout_below="@+id/recipeTitle"
-        android:layout_centerHorizontal="true"
-        />
+
 
     <ImageView
         android:layout_width="320dp"
@@ -45,18 +37,12 @@
         android:layout_marginLeft="50dp"
         />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:id="@+id/recipeValue"
-        android:layout_below="@+id/recipeLink"
-        />
+
     <Button
         android:id="@+id/saveRecipe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/recipeValue"
+        android:layout_below="@+id/recipeLink"
 
         android:text="@string/saveRecipeButton"
         android:layout_alignParentEnd="true"
@@ -64,4 +50,15 @@
 
         />
 
+    <Button
+        android:id="@+id/savedmyfavourite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/saveRecipe"
+
+        android:text="@string/gomyfave"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="50dp"
+
+        />
 </RelativeLayout>

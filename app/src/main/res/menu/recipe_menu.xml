@@ -4,7 +4,7 @@
 
     <item android:id="@+id/about"
         android:title="Recipezheyuan "
-        android:icon="@drawable/recipeHelp"
+        android:icon="@drawable/recipe_help"
         android:orderInCategory="103"
         app:showAsAction="never" />
 
@@ -14,7 +14,7 @@
 
     <item android:id="@+id/ChoiceGoHome"
         android:title="Three"
-        android:icon="@drawable/iconRecipeGoHome"
+        android:icon="@drawable/icon_recipe_gohome"
         android:orderInCategory="103"
         app:showAsAction="always" />
 </menu>
