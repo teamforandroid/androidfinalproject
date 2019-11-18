@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="android.example.finalproject.Currency_toolbar">
+    <item
+        android:id="@+id/currency_help"
+        android:icon="@drawable/currency_help"
+        android:title="Currency help"
+        android:orderInCategory="1"
+        app:showAsAction="always"/>
+
+</menu>
