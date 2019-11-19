@@ -2,6 +2,7 @@ package android.example.finalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.example.finalproject.model.RecipePojo;
 import android.graphics.Bitmap;
@@ -49,6 +50,7 @@ public class Recipe extends AppCompatActivity {
      String keyword;
      ArrayList<RecipePojo>  foodList;
      BaseAdapter myAdapter;
+     Toolbar toolbar;
 
     private String search;
 
@@ -63,6 +65,9 @@ public class Recipe extends AppCompatActivity {
         recipeItemText = (EditText) findViewById(R.id.recipeItemText);
         searchItemButton = (Button) findViewById(R.id.searchItemButton);
         recipeList = (ListView) findViewById(R.id.recipeList);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         // To populate the recipeList with data
         recipeList.setAdapter(myAdapter = new MyListAdapter());
@@ -149,21 +154,21 @@ public class Recipe extends AppCompatActivity {
             String urlImage=null;
             String url=null;
 
-            String queryURL = "https://api.edamam.com/search?q="+keyword+"&r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_9b5945e03f05acbf9d69625138385408&app_key=518555839126313535ab5bfb9f7da8ad&app_id=9fb9e712";
-
+//            String queryURL = "https://api.edamam.com/search?q="+keyword+"&r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_9b5945e03f05acbf9d69625138385408&app_key=518555839126313535ab5bfb9f7da8ad&app_id=9fb9e712";
+String queryURL = "http://torunski.ca/FinalProjectChickenBreast.json";
             try {
                 ////To create object from json
                 JSONObject jo =new JSONObject(getJSON(queryURL,10000));
-                title=jo.getJSONArray("hits").getJSONObject(0).getJSONObject("recipe").getString("label");
+                title=jo.getJSONArray("recipes").getJSONObject(0).getString("title");
                 Log.d("aaaaaaaaaa","title="+title);
                 //get title image url from JSONArray
-                JSONArray array =jo.getJSONArray("hits");
+                JSONArray array =jo.getJSONArray("recipes");
                 for(int n = 0; n < array.length(); n++)
                 {
                     //To get tilte urlimage image
-                    title=array.getJSONObject(n).getJSONObject("recipe").getString("label");
-                    urlImage=array.getJSONObject(n).getJSONObject("recipe").getString("image");
-                    url=array.getJSONObject(n).getJSONObject("recipe").getString("url");
+                    title=array.getJSONObject(n).getString("title");
+                    urlImage=array.getJSONObject(n).getString("image_url");
+                    url=array.getJSONObject(n).getString("f2f_url");
 
                     RecipePojo rp = new RecipePojo(title,urlImage,url);
                     foodList.add(rp);
@@ -250,7 +255,7 @@ public class Recipe extends AppCompatActivity {
 
 
 
- //***/ to recipe detail page
+ //***/ go to recipe detail page
 
 
 }
