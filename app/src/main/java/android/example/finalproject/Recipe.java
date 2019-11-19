@@ -10,6 +10,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -257,5 +259,29 @@ String queryURL = "http://torunski.ca/FinalProjectChickenBreast.json";
 
  //***/ go to recipe detail page
 
+
+
+    ///for toolbar
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu items for use in the action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.recipe_menu, menu);
+
+
+	    /* slide 15 material:
+	    MenuItem searchItem = menu.findItem(R.id.search_item);
+        SearchView sView = (SearchView)searchItem.getActionView();
+        sView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+            }
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }  });
+*/
+        return true;
+    }
 
 }

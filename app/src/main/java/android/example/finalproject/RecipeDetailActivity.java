@@ -64,23 +64,23 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
 
     ////save faveriat
-     saveRecipe.setOnClickListener(click -> {
+  //   saveRecipe.setOnClickListener(click -> {
         TextView titlefave = findViewById(R.id.title);
 ////should change to string??
         String favetitle=titlefave.getText().toString();
         //add to the database and get the new ID
         ContentValues newfaverecipe = new ContentValues();
         //put string name in the NAME column:
-        newfaverecipe.put(SaveFavoriteActivity.COL_MASSAGE,favetitle );
+   //     newfaverecipe.put(SaveFavoriteActivity.COL_MASSAGE,favetitle );
 
         //insert in the database:
-        long newId = db.insert(SveFavouriteActivity.TABLE_NAME, null, newfaverecipe);
+    //    long newId = db.insert(SveFavouriteActivity.TABLE_NAME, null, newfaverecipe);
         //Message messageObj = new Message(message, false,newId);
        // objects.add(messageObj);
       //  msgText.setText("");
         //myAdapter.notifyDataSetChanged();//update yourself
-    });
+   // });
 
     ///To next page  SaveFavoriteActivity
-/
+
 }
