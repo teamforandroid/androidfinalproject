@@ -1,9 +1,11 @@
 package android.example.finalproject;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -16,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -52,6 +55,10 @@ public class Charger_stations extends AppCompatActivity {
     static final String KEY_LATITUDE = "Latitude";
     static final String KEY_LONGITUDE = "Longitude";
 
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +77,9 @@ public class Charger_stations extends AppCompatActivity {
 
     }
 
+    /**
+     * @class:use this class to download information from the website
+     */
     class Download extends AsyncTask<String, Void, String> {
         @Override
         protected void onPreExecute() {
@@ -82,6 +92,11 @@ public class Charger_stations extends AppCompatActivity {
             return xml;
         }
 
+        /**
+         *
+         * @param xml
+         * use JSON to extra the information of required attributes
+         */
         @Override
         protected void onPostExecute(String xml) {
 
@@ -134,6 +149,9 @@ public class Charger_stations extends AppCompatActivity {
 
     }
 
+    /**
+     * use Adapter to populate the attributes into ListView
+     */
     //Need to add 4 functions here:
     class MyListAdapter extends BaseAdapter {
 
@@ -169,6 +187,11 @@ public class Charger_stations extends AppCompatActivity {
         }
     }
 
+    /**
+     *
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -183,6 +206,11 @@ public class Charger_stations extends AppCompatActivity {
 
     }
 
+    /**
+     *
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent;
@@ -213,11 +241,41 @@ public class Charger_stations extends AppCompatActivity {
             case R.id.charger_help:
                 //Intent myIntent = new Intent(this, News_Help.class);
                 //this.startActivity(myIntent);
+
+                alertExample();
+
                 return true;
 
             default:
                 return super.onContextItemSelected(item);
         }
+    }
+
+
+    public void alertExample()
+    {
+
+        View middle = getLayoutInflater().inflate(R.layout.charger_viewextrastuff, null);
+        ImageView imageView = (ImageView) findViewById(R.id.charger_fish);
+        //EditText et = (EditText)middle.findViewById(R.id.view_edit_text);
+        TextView textView1 = (TextView)findViewById(R.id.charger_help_author);
+        TextView textView2 = (TextView)findViewById(R.id.charger_help_version);
+        TextView textView3 = (TextView)findViewById(R.id.charger_help_instruction);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("")
+                .setPositiveButton("Positive", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                    }
+                })
+                .setNegativeButton("Negative", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // What to do on Cancel
+                    }
+                }).setView(middle);
+
+        builder.create().show();
     }
 
 }

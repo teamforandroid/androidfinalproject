@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="textView_charge">Electric Car Charging Station finder</string>
-    <string name="textView_currency">Foreign currency conversion </string>
-    <string name="textView_menu">Recipe search engine</string>
-    <string name="textView_news">News Api.org headlines </string>
-    <string name="menu_title_charger">Electric Car Charging Station finder</string>
-    <string name="menu_title_currency">Foreign currency conversion</string>
-    <string name="menu_title_recipe">Recipe search engine</string>
-    <string name="menu_title_news">News Api.org headlines</string>
+    <string name="textView_charge">电动汽车充电站</string>
+    <string name="textView_currency">外币兑换 </string>
+    <string name="textView_menu">配方搜索引擎</string>
+    <string name="textView_news">新闻头条 </string>
+    <string name="menu_title_charger">电动汽车充电站</string>
+    <string name="menu_title_currency">外币兑换</string>
+    <string name="menu_title_recipe">配方搜索引擎</string>
+    <string name="menu_title_news">新闻头条</string>
 
     <string name="app_name">新闻头条</string>
     <string name="saved">保存的文章</string>
@@ -26,5 +26,18 @@
          \n用户可以搜索与给定主题相关的文章。</string>
 
 
+    <string name="rating">在这里输入您的评分</string>
+
+    <string name="charger_help_author">作者姓名: Jie Zhang</string>
+    <string name="charger_help_versionnumber">活动版本号: ChargerFinder001</string>
+    <string name="charger_help_instructions">使用说明:</string>
+
+    <string name="charger_row_title">这里的标题</string>
+    <string name="charger_latitude">纬度</string>
+    <string name="charger_longitude">经度</string>
+    <string name="charger_stationphone">电话号码</string>
+    <string name="charger_delete">删除</string>
+    <string name="charger_google_map">谷歌地图</string>
+    <string name="charger_like">我喜欢!</string>
 
 </resources>

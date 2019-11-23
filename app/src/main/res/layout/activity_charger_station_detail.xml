@@ -73,7 +73,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="60dp"
         android:layout_marginTop="191dp"
-        android:text="Google Map" />
+        android:text="@string/charger_google_map" />
 
     <Button
         android:id="@+id/button_like"
@@ -83,7 +83,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="190dp"
         android:layout_marginEnd="81dp"
-        android:text="I like it!" />
+        android:text="@string/charger_like" />
 
     <TextView
         android:id="@+id/charger_alert"
@@ -91,5 +91,15 @@
         android:layout_height="wrap_content"
         android:visibility="invisible"
         android:text="Alert received!" />
+
+    <EditText
+        android:id="@+id/editText_rating"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_below="@id/button_googlemap"
+        android:hint="@string/rating" >
+
+    </EditText>
+
 
 </RelativeLayout>

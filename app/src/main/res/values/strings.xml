@@ -24,4 +24,17 @@
          \nApp displays recent news and the news can be saved.\n
          \nThe user can search for articles related to a given topic.</string>
 
+    <string name="rating">Enter your ratings here</string>
+    <string name="charger_help_author">Author\'s Name: Jie Zhang</string>
+    <string name="charger_help_versionnumber">Activity Version Number: ChargerFinder001</string>
+    <string name="charger_help_instructions">Instructions:The user can input a latitude and longitude location, and the server returns a list of charging stations near that location.
+    </string>
+    <string name="charger_row_title">title here</string>
+    <string name="charger_latitude">latitude</string>
+    <string name="charger_longitude">longitude</string>
+    <string name="charger_stationphone">stationphone</string>
+    <string name="charger_delete">Delete</string>
+    <string name="charger_google_map">Google Map</string>
+
+    <string name="charger_like">I like it!</string>
 </resources>
