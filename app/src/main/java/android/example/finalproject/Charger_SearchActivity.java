@@ -210,13 +210,7 @@ public class Charger_SearchActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.charger_menu_main, menu);
-        searchManager = (SearchManager)
-                getSystemService(Context.SEARCH_SERVICE);
-        search = (SearchView) menu.findItem(R.id.charger_search).getActionView();
-        search.setSearchableInfo(searchManager.
-                getSearchableInfo(getComponentName()));
-        search.setSubmitButtonEnabled(true);
+        inflater.inflate(R.menu.charger_menu_search, menu);
         return super.onCreateOptionsMenu(menu);
 
     }
@@ -230,33 +224,12 @@ public class Charger_SearchActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent;
         switch (item.getItemId()) {
-            case R.id.charger_search:
-                search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 
-                    @Override
-                    public boolean onQueryTextSubmit(String query) {
-
-                        return true;
-                    }
-
-                    @Override
-                    public boolean onQueryTextChange(String query) {
-
-                        return false;
-                    }
-
-                });
-
-                return true;
-
-            case R.id.charger_saved:
+            case R.id.charger_search_saved:
                 Intent saveIntent = new Intent(this, Charger_savedActivity.class);
                 this.startActivity(saveIntent);
                 return true;
-            case R.id.charger_help:
-                //Intent myIntent = new Intent(this, News_Help.class);
-                //this.startActivity(myIntent);
-
+            case R.id.charger_search_help:
                 alertExample();
 
                 return true;
