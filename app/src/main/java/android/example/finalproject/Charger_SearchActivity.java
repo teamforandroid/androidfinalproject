@@ -2,6 +2,7 @@ package android.example.finalproject;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.SearchManager;
 import android.content.Context;
@@ -10,7 +11,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -19,18 +19,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
-import androidx.appcompat.widget.Toolbar;
-
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -39,20 +33,22 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Charger_stations extends AppCompatActivity {
+public class Charger_SearchActivity extends AppCompatActivity {
+
     ListView listview;
     Toolbar toolbar;
-    BaseAdapter myAdapter;
     SharedPreferences prefs;
+    String previous = "FileName";
+    String KEYWORD = "null";
+    BaseAdapter myAdapter;
     SearchManager searchManager;
     SearchView search;
     ProgressBar progressBar;
-    String KEYWORD = null;
     String[] latlong;
     double latitude;
     double longitude ;
     private String weburl;
-    static final String MY_CHARGER = null;
+
     //private String weburl = "https://api.openchargemap.io/v3/poi/?output=json&countrycode=CA&latitude=45.347571&longitude=-75.756140&maxresults=10";
 
     ArrayList<HashMap<String, String>> chargerList = new ArrayList<>();
@@ -69,30 +65,26 @@ public class Charger_stations extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_charger_stations);
-        prefs = getSharedPreferences(MY_CHARGER, MODE_PRIVATE);
+        setContentView(R.layout.activity_charger__search);
 
-        //check search result, if it is not null, display it
-        if (prefs != null) {
-
-        KEYWORD = prefs.getString("KEYWORD", null);
-        latlong =  KEYWORD.split(",");
-        latitude= Double.parseDouble(latlong[0]);
-        longitude = Double.parseDouble(latlong[1]);}
-
-        //if search result is null, use default location
-        else if (prefs ==null){ latitude = 45.347571;
-               longitude = -75.756140;}
-
-        //pass the latitude and lonitude to weburl
-        weburl = "https://api.openchargemap.io/v3/poi/?output=json&countrycode=CA&latitude=" + latitude+"&longitude="+longitude+"&maxresults=10";
-
-        listview = findViewById(R.id.chargerstations_listview);
-        progressBar = findViewById(R.id.charger_progressbar);
+        listview = findViewById(R.id.chargerstations_search_listview);
+        progressBar = findViewById(R.id.charger_search_progressbar);
         listview.setEmptyView(progressBar);
 
-        toolbar = findViewById(R.id.toolbar_chargerstations);
+        toolbar = findViewById(R.id.toolbar_search_chargerstations);
         setSupportActionBar(toolbar);
+
+        prefs = getSharedPreferences(previous, MODE_PRIVATE);
+
+        Intent intent = getIntent();
+        //if (Intent.ACTION_SEARCH.equals(intent.getAction()))
+        KEYWORD = intent.getStringExtra("query");
+
+        latlong =  KEYWORD.split(",");
+        latitude= Double.parseDouble(latlong[0]);
+        longitude = Double.parseDouble(latlong[1]);
+
+        weburl = "https://api.openchargemap.io/v3/poi/?output=json&countrycode=CA&latitude=" + latitude+"&longitude="+longitude+"&maxresults=10";
 
         Download task = new Download();
         task.execute();
@@ -156,7 +148,7 @@ public class Charger_stations extends AppCompatActivity {
 
                 listview.setOnItemClickListener((parent, view, position, id) -> {
 
-                    Intent i = new Intent(Charger_stations.this, ChargerStationDetail.class);
+                    Intent i = new Intent(Charger_SearchActivity.this, ChargerStationDetail.class);
                     i.putExtra("title", chargerList.get(position).get(KEY_TITLE));
                     i.putExtra("latitude", chargerList.get(position).get(KEY_LATITUDE));
                     i.putExtra("longitude", chargerList.get(position).get(KEY_LONGITUDE));
@@ -168,7 +160,7 @@ public class Charger_stations extends AppCompatActivity {
             } else {
                 Toast.makeText(getApplicationContext(), "No news found", Toast.LENGTH_SHORT).show();
             }
-            }
+        }
 
     }
 
@@ -197,8 +189,6 @@ public class Charger_stations extends AppCompatActivity {
             View newView = inflater.inflate(R.layout.charger_row_layout, parent, false);
 
             TextView rowTitle = (TextView) newView.findViewById(R.id.titleField);
-            //String n = "<b>bold</b> <medium>mediem</medium>";
-            //rowTitle.setText(Html.fromHtml(n));
             TextView rowNumber = (TextView) newView.findViewById(R.id.numberField);
             //ImageView rowImg = (ImageView) newView.findViewById(R.id.article_img);
 
@@ -246,15 +236,6 @@ public class Charger_stations extends AppCompatActivity {
                     @Override
                     public boolean onQueryTextSubmit(String query) {
 
-                        Intent searchIntent = new Intent(Charger_stations.this, Charger_SearchActivity.class);
-
-                        //getPreferences(MODE_PRIVATE).edit().putString("KEYWORD",query).apply();
-                        SharedPreferences.Editor editor = getSharedPreferences(MY_CHARGER, MODE_PRIVATE).edit();
-                        editor.putString("KEYWORD", query);
-                        editor.commit();
-
-                        searchIntent.putExtra("query", query);
-                        startActivity(searchIntent);
                         return true;
                     }
 
@@ -313,3 +294,5 @@ public class Charger_stations extends AppCompatActivity {
     }
 
 }
+
+
