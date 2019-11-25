@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="25dp">
+
+    <TextView
+        android:id="@+id/chargertitle"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:text="title here" />
+
+    <TextView
+        android:id="@+id/latitudeField"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/chargertitle"
+        android:text="latitude" />
+
+    <TextView
+    android:id="@+id/longitudeField"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:layout_below="@id/latitudeField"
+    android:text="longitude" />
+
+    <TextView
+        android:id="@+id/stationphone"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/longitudeField"
+        android:text="stationphone" />
+
+    <Button
+        android:id="@+id/button_stationdelete"
+        android:layout_width="118dp"
+        android:layout_height="39dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="268dp"
+        android:layout_marginTop="173dp"
+        android:text="Delete" />
+
+    <Button
+        android:id="@+id/button_showmap"
+        android:layout_width="157dp"
+        android:layout_height="42dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="170dp"
+        android:layout_marginEnd="226dp"
+        android:text="Google Map" />
+
+
+</RelativeLayout>
