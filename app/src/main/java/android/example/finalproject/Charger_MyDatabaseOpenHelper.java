@@ -30,6 +30,10 @@ public class Charger_MyDatabaseOpenHelper extends SQLiteOpenHelper {
         super(ctx, DATABASE_NAME, null, VERSION_NUM );
     }
 
+    /**
+     *
+     * @param db
+     */
     @Override
     public void onCreate(SQLiteDatabase db)
     {
@@ -78,6 +82,14 @@ public class Charger_MyDatabaseOpenHelper extends SQLiteOpenHelper {
     }
 
 
+    /**
+     *
+     * @param title
+     * @param latitude
+     * @param longitude
+     * @param telephone
+     * @return
+     */
     public boolean addChargerData(String title, String latitude, String longitude, String telephone) {
 
         SQLiteDatabase db = this.getWritableDatabase();

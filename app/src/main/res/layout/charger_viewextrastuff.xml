@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/charger_fish"
+        android:layout_width="wrap_content"
+        android:layout_height="115dp"
+        android:layout_gravity="center"
+        android:src="@drawable/charger_fish" />
+
+    <TextView
+        android:id="@+id/charger_help_author"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:text="@string/charger_help_author" />
+
+    <TextView
+        android:id="@+id/charger_help_version"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:text="@string/charger_help_versionnumber" />
+
+    <TextView
+        android:id="@+id/charger_help_instruction"
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
+        android:text="@string/charger_help_instructions" />
+
+
+
+
+
+
+
+
+
+</LinearLayout>

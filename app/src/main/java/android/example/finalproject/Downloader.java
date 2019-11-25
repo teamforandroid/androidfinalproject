@@ -11,11 +11,20 @@ import java.net.URL;
 
 public class Downloader {
 
+    /**
+     *
+     * @param context
+     * @return
+     */
     public static boolean isNetworkConnected(Context context) {
         return ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo() != null;
     }
 
-
+    /**
+     *
+     * @param targetURL
+     * @return
+     */
     public static String excuteGet(String targetURL) {
         URL url;
         HttpURLConnection connection = null;

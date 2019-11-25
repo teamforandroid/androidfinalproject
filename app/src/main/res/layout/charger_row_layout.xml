@@ -8,12 +8,16 @@
         android:id="@+id/titleField"
         android:layout_width="match_parent"
         android:layout_height="34dp"
+        android:textSize="30dp"
+        android:textColor="@color/colorAccent"
         android:text="title here" />
 
     <TextView
         android:id="@+id/numberField"
         android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:textSize="20dp"
+        android:textColor="@color/colorAccent"
         android:layout_below="@id/titleField"
         android:text="phonenumber here" />
 

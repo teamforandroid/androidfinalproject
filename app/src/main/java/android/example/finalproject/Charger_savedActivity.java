@@ -32,6 +32,10 @@ public class Charger_savedActivity extends AppCompatActivity {
     HashMap<String, String> data;
     String latitude, longitude;
 
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +49,7 @@ public class Charger_savedActivity extends AppCompatActivity {
         mydb = new Charger_MyDatabaseOpenHelper(this);
         SQLiteDatabase db = mydb.getWritableDatabase();
 
-        buttonshowmap = findViewById(R.id.button_showmap);
+       // buttonshowmap = findViewById(R.id.button_showmap);
 
         //query all the results from the database:
         String[] columns = {Charger_MyDatabaseOpenHelper.COL_ID, Charger_MyDatabaseOpenHelper.COL_TITLE,
@@ -133,6 +137,9 @@ public class Charger_savedActivity extends AppCompatActivity {
                 }
             });*/
 
+            /**
+             * delete Button function
+             */
             deleteButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -156,4 +163,8 @@ public class Charger_savedActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Something went wrong", Toast.LENGTH_LONG).show();
         }
     }
+
+
+
+
 }

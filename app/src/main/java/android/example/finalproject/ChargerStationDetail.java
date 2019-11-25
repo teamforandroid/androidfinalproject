@@ -14,6 +14,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,6 +33,11 @@ public class ChargerStationDetail extends AppCompatActivity {
     SearchView search;
     Charger_MyDatabaseOpenHelper mydb;
 
+
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -113,7 +119,11 @@ public class ChargerStationDetail extends AppCompatActivity {
 
             }
 
-
+    /**
+     *
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -122,6 +132,11 @@ public class ChargerStationDetail extends AppCompatActivity {
 
     }
 
+    /**
+     *
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -137,6 +152,7 @@ public class ChargerStationDetail extends AppCompatActivity {
                 case R.id.charger_help:
                 //Intent myIntent = new Intent(this, News_Help.class);
                 //this.startActivity(myIntent);
+                    alertExample();
                 return true;
 
             default:
@@ -144,6 +160,13 @@ public class ChargerStationDetail extends AppCompatActivity {
         }
     }
 
+    /**
+     *
+     * @param title
+     * @param latitude
+     * @param longitude
+     * @param telephone
+     */
     public void addChargerData(String title, String latitude, String longitude, String telephone) {
         boolean insertData = mydb.addChargerData(title, latitude, longitude, telephone);
         if (insertData) {
@@ -153,4 +176,33 @@ public class ChargerStationDetail extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Wrong, not saved", Toast.LENGTH_LONG).show();
         }
     }
+
+
+    public void alertExample()
+    {
+
+        View middle = getLayoutInflater().inflate(R.layout.charger_viewextrastuff, null);
+        ImageView imageView = (ImageView) findViewById(R.id.charger_fish);
+        //EditText et = (EditText)middle.findViewById(R.id.view_edit_text);
+        TextView textView1 = (TextView)findViewById(R.id.charger_help_author);
+        TextView textView2 = (TextView)findViewById(R.id.charger_help_version);
+        TextView textView3 = (TextView)findViewById(R.id.charger_help_instruction);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("")
+                .setPositiveButton("Positive", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                    }
+                })
+                .setNegativeButton("Negative", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // What to do on Cancel
+                    }
+                }).setView(middle);
+
+        builder.create().show();
+    }
+
+
 }
