@@ -35,4 +35,5 @@
          \nApp can use the recent conversion to convert the amount.\n
          \nThe user can search for initial currency and type the amount, will display the conversion to another currency.</string>
 
+    <string name="currency_delete">Delete!</string>
 </resources>

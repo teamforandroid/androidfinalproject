@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Currency">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_main"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <TextView
+        android:id="@+id/from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/text_from"
+        android:layout_below="@id/toolbar_main"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/from"
+        android:layout_below="@id/toolbar_main" />
+
+    <EditText
+        android:id="@+id/firstCurrency"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/from"
+        android:hint="@string/text_firstCurrency"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_below="@id/firstCurrency"
+        android:text="@string/text_to"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/to"
+        android:layout_below="@id/firstCurrency"/>
+
+    <Button
+        android:id="@+id/convert"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/to"
+        android:text="@string/button_convert" />
+
+    <EditText
+        android:id="@+id/secondCurrency"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/text_secondCurrency"
+        android:layout_below="@id/convert"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:minWidth="50dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/secondCurrency"
+        android:max="100"
+        android:layout_weight="1" />
+
+    <ListView
+        android:id="@+id/theList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_below="@id/progressBar"
+        />
+
+    <FrameLayout
+        android:id="@+id/fragmentLocation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"
+        android:layout_toRightOf="@id/toolbar_main"/>
+</RelativeLayout>

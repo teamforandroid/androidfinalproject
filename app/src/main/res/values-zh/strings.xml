@@ -37,5 +37,5 @@
          \n可以使用最近的汇率来计算货币的转换\n
          \n用户可以输入原始货币名称，输入金额，即可转换成所需的货币金额.</string>
 
-
+    <string name="currency_delete">删除!</string>
 </resources>
