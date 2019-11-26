@@ -9,6 +9,12 @@
     <string name="menu_title_recipe">Recipe search engine</string>
     <string name="menu_title_news">News Api.org headlines</string>
 
+    <string name="text_firstCurrency">Input amount</string>
+    <string name="text_secondCurrency">Output amount</string>
+    <string name="button_convert">Convert Currency</string>
+    <string name="text_from">Convert From：</string>
+    <string name="text_to">Convert TO：</string>
+
     <string name="saved">Saved Articles</string>
     <string name="title_saved">Saved Article</string>
     <string name="title_save">Save</string>
@@ -25,6 +31,12 @@
          \nThe user can search for articles related to a given topic.</string>
     <string name="help_detail2">Uer can save article they like.</string>
 
+    <string name="currency_help_dialog">Version 0.9.\n
+         \nForeign Currency conversion api App By Yuan Zhou\n
+         \nApp can use the recent conversion to convert the amount.\n
+         \nThe user can search for initial currency and type the amount, will display the conversion to another currency.</string>
+
+    <string name="currency_delete">Delete!</string>
     <string name="rating">Enter your ratings here</string>
     <string name="charger_help_author">Author\'s Name: Jie Zhang</string>
     <string name="charger_help_versionnumber">Activity Version Number: ChargerFinder001</string>

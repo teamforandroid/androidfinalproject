@@ -24,6 +24,7 @@
         <activity android:name=".Currency" />
         <activity android:name=".Recipe" />
         <activity android:name=".Charger" />
+        <activity android:name=".Currency_EmptyActivity" />
         <activity android:name=".Charger_stations" />
         <activity android:name=".MainActivity">
             <intent-filter>

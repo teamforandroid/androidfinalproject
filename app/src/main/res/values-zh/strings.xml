@@ -11,7 +11,14 @@
     <string name="menu_title_recipe">配方搜索引擎</string>
     <string name="menu_title_news">新闻头条</string>
 
-    <string name="app_name">新闻头条</string>
+
+    <string name="text_firstCurrency">输入金额</string>
+    <string name="text_secondCurrency">输出金额</string>
+    <string name="button_convert">币种换算</string>
+    <string name="text_from">基础币种：</string>
+    <string name="text_to">换算结果币种：</string>
+
+    <string name="app_name">Final Project</string>
     <string name="saved">保存的文章</string>
     <string name="title_saved">保存的文章</string>
     <string name="title_save">保存</string>
@@ -31,6 +38,12 @@
 
     <string name="rating">在这里输入您的评分</string>
 
+    <string name="currency_help_dialog">版本 0.9.\n
+         \n货币转换 Yuan Zhou\n
+         \n可以使用最近的汇率来计算货币的转换\n
+         \n用户可以输入原始货币名称，输入金额，即可转换成所需的货币金额.</string>
+
+    <string name="currency_delete">删除!</string>
     <string name="charger_help_author">作者姓名: Jie Zhang</string>
     <string name="charger_help_versionnumber">活动版本号: ChargerFinder001</string>
     <string name="charger_help_instructions">使用说明:</string>
@@ -42,5 +55,4 @@
     <string name="charger_delete">删除</string>
     <string name="charger_google_map">谷歌地图</string>
     <string name="charger_like">我喜欢!</string>
-
 </resources>
