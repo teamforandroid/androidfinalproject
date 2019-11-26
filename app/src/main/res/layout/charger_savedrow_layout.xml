@@ -8,28 +8,28 @@
         android:id="@+id/chargertitle"
         android:layout_width="match_parent"
         android:layout_height="34dp"
-        android:text="title here" />
+        android:text="@string/charger_row_title" />
 
     <TextView
         android:id="@+id/latitudeField"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_below="@id/chargertitle"
-        android:text="latitude" />
+        android:text="@string/charger_latitude" />
 
     <TextView
     android:id="@+id/longitudeField"
     android:layout_width="match_parent"
     android:layout_height="48dp"
     android:layout_below="@id/latitudeField"
-    android:text="longitude" />
+    android:text="@string/charger_longitude" />
 
     <TextView
         android:id="@+id/stationphone"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_below="@id/longitudeField"
-        android:text="stationphone" />
+        android:text="@string/charger_stationphone" />
 
     <Button
         android:id="@+id/button_stationdelete"
@@ -39,20 +39,9 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="268dp"
         android:layout_marginTop="173dp"
-        android:text="Delete" />
+        android:text="@string/charger_delete" />
 
-    <Button
-        android:id="@+id/button_showmap"
-        android:layout_width="157dp"
-        android:layout_height="42dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="170dp"
-        android:layout_marginEnd="226dp"
-        android:text="Google Map" />
+
 
 
 </RelativeLayout>
