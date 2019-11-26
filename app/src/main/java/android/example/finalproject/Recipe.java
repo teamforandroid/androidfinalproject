@@ -90,13 +90,15 @@ public class Recipe extends AppCompatActivity {
             }
         });
 ////to set the progressBar’s visibility
-        recipeProgress = (ProgressBar) findViewById(R.id.progress);
-        recipeProgress.setVisibility(View.VISIBLE);
+        recipeProgress = (ProgressBar) findViewById(R.id.recipe_progress);
+        recipeProgress.setVisibility(View.INVISIBLE);
+
 
         //To remind to entry search item
         searchItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                recipeProgress.setVisibility(View.VISIBLE);
                 recipekeyword=recipeItemText.getText().toString();
                 if(recipekeyword!=null || !recipekeyword.isEmpty()){
 
@@ -270,14 +272,14 @@ String queryURL = "http://torunski.ca/FinalProjectChickenBreast.json";
     }
       //// To update data
         void notifyAdapter(){
+
         recipemyAdapter.notifyDataSetChanged();
+            recipeProgress.setVisibility(View.INVISIBLE);
         }
 
 
 
  //***/ go to recipe detail page
-
-
 
     ///to create toolbar
     @Override
