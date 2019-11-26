@@ -9,6 +9,7 @@
     <string name="menu_title_recipe">Recipe search engine</string>
     <string name="menu_title_news">News Api.org headlines</string>
 
+
     <string name="text_firstCurrency">Input amount</string>
     <string name="text_secondCurrency">Output amount</string>
     <string name="button_convert">Convert Currency</string>
@@ -50,4 +51,17 @@
     <string name="charger_google_map">Google Map</string>
 
     <string name="charger_like">I like it!</string>
+
+
+    <string name="recipeForSearch"> please input </string>
+    <string name="RecipeSearch">Search</string>
+    <string name="recipe_title">Recipe Title</string>
+    <string name="recipeLink">You can find recipe here </string>
+    <string name="saveRecipeButton">Save this recipes </string>
+    <string name="deleteRecipe">Delete</string>
+    <string name="exitButton">Go Home</string>
+    <string name="deleteFavourites">Delete</string>
+    <string name="gomyfave"> My favourite recipe</string>
+    <string name="recipe_hepl_sring"> help</string>
+
 </resources>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+
     <string name="textView_charge">电动汽车充电站取景器</string>
     <string name="textView_currency">外币兑换 </string>
     <string name="textView_menu">配方搜索引擎</string>
@@ -55,4 +56,17 @@
     <string name="charger_delete">删除</string>
     <string name="charger_google_map">谷歌地图</string>
     <string name="charger_like">我喜欢!</string>
+
+
+    <string name="recipeForSearch"> 请输入食谱名单 </string>
+    <string name="RecipeSearch">查询</string>
+    <string name="recipe_title">食谱名称</string>
+    <string name="recipeLink">网站链接 </string>
+    <string name="saveRecipeButton">保存食谱 </string>
+    <string name="deleteRecipe">删除</string>
+    <string name="exitButton">返回</string>
+    <string name="deleteFavourites">删除</string>
+    <string name="gomyfave"> 最喜欢的食谱</string>
+    <string name="recipe_hepl_sring"> 帮助</string>
+
 </resources>
