@@ -21,7 +21,7 @@ public class Currency_EmptyActivity extends AppCompatActivity {
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.fragmentLocation, dFragment)
-                .addToBackStack("AnyName")
+            //  .addToBackStack("AnyName")
                 .commit();
     }
 }

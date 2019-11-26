@@ -15,9 +15,22 @@ import androidx.fragment.app.Fragment;
 
 public class Currency_DetailFragment extends Fragment {
 
+    /**
+     *isTablet is used to check the emulator is tablet or phone.
+     */
     private boolean isTablet;
+    /**
+     *pass parameter to fragment page
+     */
     private Bundle dataFromActivity;
+    /**
+     *record id
+     */
     private long id;
+
+    /**
+     * set whether it is tablet
+     */
 
     public void setTablet(boolean tablet) { isTablet = tablet; }
 
@@ -37,6 +50,10 @@ public class Currency_DetailFragment extends Fragment {
         String content = dataFromActivity.getString(Currency.ITEM_SELECTED);
         String[] contentDetail = content.split("\\s");
         from.setText(contentDetail[1]);
+
+        //ID
+        TextView currency_id = (TextView)result.findViewById(R.id.currency_ID);
+        currency_id.setText(contentDetail[0].substring(0,1));
 
         //From Amount
         TextView fromAmount = (TextView)result.findViewById(R.id.FromAmount);

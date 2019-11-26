@@ -1,7 +1,6 @@
 package android.example.finalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -25,10 +24,8 @@ import android.widget.Toast;
 import android.content.DialogInterface;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.Toolbar;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -84,13 +81,13 @@ public class Currency extends AppCompatActivity{
         prefsForList = getSharedPreferences(CURRENCY_HISTORY, MODE_PRIVATE);
         progressBar = findViewById(R.id.progressBar);
         int historyNumbers = prefsForList.getInt("COUNT",0);
-        for (int i = 1;i <= historyNumbers;) {
-            if (prefsForList.getString("From" + Integer.toString(i),null) == null)
+        for (int i = 1, j = 1; i <= historyNumbers; j++) {
+            if (prefsForList.getString("From" + Integer.toString(j),null) == null)
                 continue;
-            String tmp = Integer.toString(i) + ":" + prefsForList.getString("FromAmount" + Integer.toString(i),null) + " "
-                    + prefsForList.getString("From" + Integer.toString(i),null) + "  Convert to "
-                    + prefsForList.getString("ToAmount" + Integer.toString(i),null) + " "
-                    + prefsForList.getString("To" + Integer.toString(i),null);
+            String tmp = Integer.toString(j) + ":" + prefsForList.getString("FromAmount" + Integer.toString(j),null) + " "
+                    + prefsForList.getString("From" + Integer.toString(j),null) + "  Convert to "
+                    + prefsForList.getString("ToAmount" + Integer.toString(j),null) + " "
+                    + prefsForList.getString("To" + Integer.toString(j),null);
             source.add(tmp);
             i++;
         }
