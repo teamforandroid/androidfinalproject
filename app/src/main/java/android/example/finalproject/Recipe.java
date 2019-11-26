@@ -1,17 +1,20 @@
 package android.example.finalproject;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.example.finalproject.model.RecipePojo;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -28,7 +31,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -49,10 +54,10 @@ public class Recipe extends AppCompatActivity {
      EditText recipeItemText;
      ListView recipeList;
      ProgressBar recipeProgress;
-     String keyword;
+     String recipekeyword;
      ArrayList<RecipePojo>  foodList;
-     BaseAdapter myAdapter;
-     Toolbar toolbar;
+     BaseAdapter recipemyAdapter;
+     Toolbar recipetoolbar;
 
     private String search;
 
@@ -68,11 +73,11 @@ public class Recipe extends AppCompatActivity {
         searchItemButton = (Button) findViewById(R.id.searchItemButton);
         recipeList = (ListView) findViewById(R.id.recipeList);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        recipetoolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(recipetoolbar);
 
         // To populate the recipeList with data
-        recipeList.setAdapter(myAdapter = new MyListAdapter());
+        recipeList.setAdapter(recipemyAdapter = new MyListAdapter());
         recipeList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
            //add list a log to test
@@ -89,11 +94,11 @@ public class Recipe extends AppCompatActivity {
         searchItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                keyword=recipeItemText.getText().toString();
-                if(keyword!=null || !keyword.isEmpty()){
+                recipekeyword=recipeItemText.getText().toString();
+                if(recipekeyword!=null || !recipekeyword.isEmpty()){
 
   /////      //show the Snackbar.
-    //            Snackbar.make(getApplicationContext(), "start to search", Snackbar.LENGTH_LONG).show();
+         //   Snackbar.make(getApplicationContext(), "start to search", Snackbar.LENGTH_LONG).show();
                     new RecipeQuery().execute();
                 }else {
 /////Show the toast for remind immediately????????
@@ -112,7 +117,12 @@ public class Recipe extends AppCompatActivity {
         Intent intent = new Intent(Recipe.this, RecipeDetailActivity.class);
         intent.putExtra("title",obj.getTitle());
         intent.putExtra("url",obj.getUrl());
-        intent.putExtra("imageUrl",obj.getUrlImage());
+
+        //---can not get image?/
+//        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+//        obj.getImage().compress(Bitmap.CompressFormat.PNG, 100, stream);
+//        byte[] byteArray = stream.toByteArray();
+//        intent.putExtra("image",byteArray);
         startActivity(intent);
 
     }
@@ -155,6 +165,7 @@ public class Recipe extends AppCompatActivity {
             String title =null;
             String urlImage=null;
             String url=null;
+            Bitmap foodImage=null;
 
 //            String queryURL = "https://api.edamam.com/search?q="+keyword+"&r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_9b5945e03f05acbf9d69625138385408&app_key=518555839126313535ab5bfb9f7da8ad&app_id=9fb9e712";
 String queryURL = "http://torunski.ca/FinalProjectChickenBreast.json";
@@ -170,9 +181,13 @@ String queryURL = "http://torunski.ca/FinalProjectChickenBreast.json";
                     //To get tilte urlimage image
                     title=array.getJSONObject(n).getString("title");
                     urlImage=array.getJSONObject(n).getString("image_url");
-                    url=array.getJSONObject(n).getString("f2f_url");
+                    url=array.getJSONObject(n).getString("source_url");
+                    foodImage=getBitmapFromURL(urlImage);
+                    Log.d("imgurl",urlImage);
+                    boolean a=foodImage==null;
+                    Log.d("dddddddddddddddd",""+a);
 
-                    RecipePojo rp = new RecipePojo(title,urlImage,url);
+                    RecipePojo rp = new RecipePojo(title,foodImage,url);
                     foodList.add(rp);
 
                 }
@@ -184,20 +199,20 @@ String queryURL = "http://torunski.ca/FinalProjectChickenBreast.json";
             return null;
         }
 
-   //     public Bitmap getBitmapFromURL(String src) {
-//            try {
-//                URL url = new URL(src);
-//                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-//                connection.setDoInput(true);
-//                connection.connect();
-//                InputStream input = connection.getInputStream();
-//                Bitmap myBitmap = BitmapFactory.decodeStream(input);
-//                return myBitmap;
-//            } catch (IOException e) {
-//                // Log exception
-//                return null;
-//            }
-  //      }
+        public Bitmap getBitmapFromURL(String src) {
+            try {
+                URL url = new URL(src);
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.setDoInput(true);
+                connection.connect();
+                InputStream input = connection.getInputStream();
+                Bitmap myBitmap = BitmapFactory.decodeStream(input);
+                return myBitmap;
+            } catch (IOException e) {
+                e.printStackTrace();
+                return null;
+            }
+        }
 
         //get json string by url  from  https://stackoverflow.com/questions/10500775/parse-json-from-httpurlconnection-object
         public String getJSON(String url, int timeout) {
@@ -252,7 +267,7 @@ String queryURL = "http://torunski.ca/FinalProjectChickenBreast.json";
     }
       //// To update data
         void notifyAdapter(){
-        myAdapter.notifyDataSetChanged();
+        recipemyAdapter.notifyDataSetChanged();
         }
 
 
@@ -261,7 +276,7 @@ String queryURL = "http://torunski.ca/FinalProjectChickenBreast.json";
 
 
 
-    ///for toolbar
+    ///to create toolbar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu items for use in the action bar
@@ -283,5 +298,15 @@ String queryURL = "http://torunski.ca/FinalProjectChickenBreast.json";
 */
         return true;
     }
+//toolbar
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.ChoiceGoHome:
+                Toast.makeText(this, "Do you want to go home page?", Toast.LENGTH_SHORT).show();
+                break;
+        }
 
+        return super.onOptionsItemSelected(item);
+    }
 }
