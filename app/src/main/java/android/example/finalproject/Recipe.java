@@ -305,7 +305,14 @@ String queryURL = "http://torunski.ca/FinalProjectChickenBreast.json";
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.ChoiceGoHome:
+            case R.id.recipe_help_ChoiceToast:
+                //Log.d("Toolbar", "Choice 1 selected");
+
+                Toast.makeText(getApplicationContext(), "please enter the food that you want to search.",
+                        Toast.LENGTH_SHORT).show();
+
+                break;
+            case R.id.recipe_ChoiceGoHome:
                // Toast.makeText(this, "Do you want to go home page?", Toast.LENGTH_SHORT).show();
                // break;
                 Snackbar.make(findViewById(R.id.toolbar),"Go Home" , Snackbar.LENGTH_LONG)

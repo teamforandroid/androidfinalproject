@@ -6,6 +6,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Message;
@@ -43,14 +44,32 @@ public class RecipeDetailActivity extends AppCompatActivity {
         title= getIntent().getStringExtra("title");
         titleTextView.setText(title);
         url=getIntent().getStringExtra("url");
-
+        urlText.setText(url);
+        urlText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                recipejumpUrl(url);
+            }
+        });
 
 //get image---can not get image
 //        byte[] byteArray =getIntent().getByteArrayExtra("image");
 //        image = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
 //        imageView.setImageBitmap(image);
 
+      //  findViewById(R.id.button_longin).setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View view) {
+        //        Intent intent = new Intent(RecipeDetailActivity.this, SaveFavoriteActivity.class);
+               // intent.putExtra("email",emailAddressSaved);
+             //   startActivity(intent);
+          //  }
+    }
 
+    private void recipejumpUrl(String url) {
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse(url));
+        startActivity(i);
     }
 
 

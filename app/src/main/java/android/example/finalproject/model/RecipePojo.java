@@ -1,21 +1,23 @@
 package android.example.finalproject.model;
 
+import android.graphics.Bitmap;
+
 public class RecipePojo {
 
     private long id;
     private String title;
-    private String urlImage;
+    private Bitmap image;
     private  String url;
 
-    public RecipePojo( String title, String urlImage, String url) {
+    public RecipePojo( String title, Bitmap image, String url) {
         this.title = title;
-        this.urlImage = urlImage;
+        this.image = image;
         this.url = url;
     }
-    public RecipePojo(long id, String title, String urlImage, String url) {
+    public RecipePojo(long id, String title, Bitmap image, String url) {
         this.id = id;
         this.title = title;
-        this.urlImage = urlImage;
+        this.image = image;
         this.url = url;
     }
 
@@ -35,12 +37,12 @@ public class RecipePojo {
         this.title = title;
     }
 
-    public String getUrlImage() {
-        return urlImage;
+    public Bitmap getImage() {
+        return image;
     }
 
-    public void setUrlImage(String urlImage) {
-        this.urlImage = urlImage;
+    public void setImage(Bitmap image) {
+        this.image = image;
     }
 
     public String getUrl() {
