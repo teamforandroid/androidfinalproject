@@ -3,6 +3,7 @@ package android.example.finalproject;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import androidx.appcompat.view.menu.ActionMenuItemView;
 import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.example.finalproject.model.RecipePojo;
@@ -25,6 +26,8 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -303,8 +306,17 @@ String queryURL = "http://torunski.ca/FinalProjectChickenBreast.json";
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.ChoiceGoHome:
-                Toast.makeText(this, "Do you want to go home page?", Toast.LENGTH_SHORT).show();
-                break;
+               // Toast.makeText(this, "Do you want to go home page?", Toast.LENGTH_SHORT).show();
+               // break;
+                Snackbar.make(findViewById(R.id.toolbar),"Go Home" , Snackbar.LENGTH_LONG)
+                        .setAction("Action", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                finish();
+                            }
+                        }).show();
+               // finish();
+
         }
 
         return super.onOptionsItemSelected(item);
