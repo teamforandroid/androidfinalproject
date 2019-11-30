@@ -39,6 +39,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * This is the main class for Charger
+ */
 public class Charger_stations extends AppCompatActivity {
     ListView listview;
     Toolbar toolbar;
@@ -73,19 +76,18 @@ public class Charger_stations extends AppCompatActivity {
         prefs = getSharedPreferences(MY_CHARGER, MODE_PRIVATE);
 
         //check search result, if it is not null, display it
-        if (prefs != null) {
+        if (prefs != null ) {
 
-        KEYWORD = prefs.getString("KEYWORD", null);
+        KEYWORD = prefs.getString("KEYWORD", "45,-75");
         latlong =  KEYWORD.split(",");
         latitude= Double.parseDouble(latlong[0]);
-        longitude = Double.parseDouble(latlong[1]);}
+        longitude = Double.parseDouble(latlong[1]);
+        weburl = "https://api.openchargemap.io/v3/poi/?output=json&countrycode=CA&latitude=" + latitude+"&longitude="+longitude+"&maxresults=10";
+        }
 
         //if search result is null, use default location
-        else if (prefs ==null){ latitude = 45.347571;
-               longitude = -75.756140;}
-
-        //pass the latitude and lonitude to weburl
-        weburl = "https://api.openchargemap.io/v3/poi/?output=json&countrycode=CA&latitude=" + latitude+"&longitude="+longitude+"&maxresults=10";
+        else
+            weburl = "https://api.openchargemap.io/v3/poi/?output=json&countrycode=CA&latitude=45.347571&longitude=-75.756140&maxresults=10";
 
         listview = findViewById(R.id.chargerstations_listview);
         progressBar = findViewById(R.id.charger_progressbar);
@@ -156,7 +158,7 @@ public class Charger_stations extends AppCompatActivity {
 
                 listview.setOnItemClickListener((parent, view, position, id) -> {
 
-                    Intent i = new Intent(Charger_stations.this, ChargerStationDetail.class);
+                    Intent i = new Intent(Charger_stations.this, ChargerStationDetailFragment.class);
                     i.putExtra("title", chargerList.get(position).get(KEY_TITLE));
                     i.putExtra("latitude", chargerList.get(position).get(KEY_LATITUDE));
                     i.putExtra("longitude", chargerList.get(position).get(KEY_LONGITUDE));

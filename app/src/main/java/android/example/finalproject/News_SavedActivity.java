@@ -22,13 +22,19 @@ import androidx.appcompat.widget.Toolbar;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * This class is used for save News in my favorite
+ */
 public class News_SavedActivity extends AppCompatActivity {
     News_MyDatabaseOpenHelper mydb;
     BaseAdapter myAdapter;
     Toolbar toolbar;
     ListView listNews;
     int positionClicked = 0;
+
+    //save all news in articleList
     ArrayList<HashMap<String, String>> articleList = new ArrayList<>();
+
     ArrayList<String> titleList = new ArrayList<>();
 
     /**

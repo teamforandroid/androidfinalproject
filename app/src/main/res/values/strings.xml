@@ -63,6 +63,7 @@
     <string name="deleteFavourites">Delete</string>
     <string name="gomyfave"> My favourite recipe</string>
     <string name="recipe_hepl_sring"> help</string>
+    <string name="charger_Iwanttocharge">I want to charge here!</string>
 
     <string name="recipe_helpmenu_title">Help</string>
     <string name="recipe_help_string">\nVersion 0.9.\n

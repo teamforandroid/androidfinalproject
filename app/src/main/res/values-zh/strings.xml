@@ -68,6 +68,7 @@
     <string name="deleteFavourites">删除</string>
     <string name="gomyfave"> 最喜欢的食谱</string>
     <string name="recipe_hepl_sring"> 帮助</string>
+<<<<<<< HEAD
     <string name="recipe_helpmenu_title">帮助</string>
     <string name="recipe_help_string">版本 0.9.\n
          \n菜谱搜素 Zheyuan Li\n
@@ -75,5 +76,8 @@
          \n用户可以搜索与给定菜谱相关的文章。</string>
     <string name="recipe_toast_string">输入检索食谱菜单</string>
     <string name="recipe_gohome_string">返回</string>
+=======
+    <string name="charger_Iwanttocharge">我要在这里充电!</string>
+>>>>>>> 4d085a7a60bec3c41e51d11009b3bb9c25b24124
 
 </resources>

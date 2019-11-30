@@ -81,6 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+
         android:layout_marginTop="190dp"
         android:layout_marginEnd="81dp"
         android:text="@string/charger_like" />
@@ -101,23 +102,22 @@
 
     </EditText>
 
-
     <Button
         android:id="@+id/buttonMap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/charger_Iwanttocharge"
+        android:text="Button"
         android:layout_below="@id/editText_rating"/>
 
     <FrameLayout
         android:id="@+id/fragmentLocation"
-        android:layout_width="286dp"
-        android:layout_height="258dp"
+        android:layout_width="365dp"
+        android:layout_height="400dp"
 
         android:layout_below="@id/buttonMap"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="75dp" />
+        android:layout_marginTop="155dp"
+        android:layout_marginEnd="190dp" />
 
 
 </RelativeLayout>
