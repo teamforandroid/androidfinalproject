@@ -9,6 +9,10 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+
+/**
+ * This class is used for download content from webset
+ */
 public class Downloader {
 
     /**
@@ -34,8 +38,8 @@ public class Downloader {
             connection.setRequestProperty("content-type", "application/json;  charset=utf-8");
             connection.setRequestProperty("Content-Language", "en-US");
             connection.setUseCaches(false);
-            connection.setDoInput(true);
-            connection.setDoOutput(false);
+            //connection.setDoInput(true);
+            //connection.setDoOutput(false);
 
             InputStream is;
             int status = connection.getResponseCode();

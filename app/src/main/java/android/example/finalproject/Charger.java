@@ -41,6 +41,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * This is the original Charger Class which is replaced by Charger_stations
+ */
 public class Charger extends FragmentActivity implements OnMapReadyCallback {
 
     GoogleMap googleMap;
@@ -58,6 +61,10 @@ public class Charger extends FragmentActivity implements OnMapReadyCallback {
     static final String KEY_LATITUDE = "Latitude";
     static final String KEY_LONGITUDE = "Longitude";
 
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -163,6 +170,10 @@ public class Charger extends FragmentActivity implements OnMapReadyCallback {
     }
 
 
+    /**
+     *
+     * @param googleMap
+     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
         Toast.makeText(this, "Map is ready", Toast.LENGTH_SHORT).show();
@@ -176,6 +187,12 @@ public class Charger extends FragmentActivity implements OnMapReadyCallback {
     }
 
 
+    /**
+     *
+     * @param requestCode
+     * @param permissions
+     * @param grantResults
+     */
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);

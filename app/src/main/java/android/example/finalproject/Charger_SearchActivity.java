@@ -33,6 +33,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * Search activity for Charger
+ */
 public class Charger_SearchActivity extends AppCompatActivity {
 
     ListView listview;
@@ -240,6 +243,9 @@ public class Charger_SearchActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * alert function shows dialog
+     */
     public void alertExample()
     {
 

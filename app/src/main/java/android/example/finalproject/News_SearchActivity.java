@@ -25,6 +25,10 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * This class is used to search news you like
+ * It pass the KEYWORD to the server
+ */
 public class News_SearchActivity extends AppCompatActivity {
     ListView listNews;
     ProgressBar loader;

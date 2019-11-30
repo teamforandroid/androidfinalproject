@@ -20,6 +20,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * Saved activity for Charger
+ */
 public class Charger_savedActivity extends AppCompatActivity {
 
     Charger_MyDatabaseOpenHelper mydb;
@@ -86,6 +89,9 @@ public class Charger_savedActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * This is chargerAdapter clsss
+     */
     public class ChargerAdapter extends BaseAdapter {
 
         @Override
@@ -155,12 +161,16 @@ public class Charger_savedActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Delete function
+     * @param title
+     */
     public void deleteChargeStation(String title) {
         boolean deleteData = mydb.deleteData(title);
         if (deleteData) {
-            Toast.makeText(getApplicationContext(), "Data deleted", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Deleted", Toast.LENGTH_LONG).show();
         } else {
-            Toast.makeText(getApplicationContext(), "Something went wrong", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Not deleted", Toast.LENGTH_LONG).show();
         }
     }
 
