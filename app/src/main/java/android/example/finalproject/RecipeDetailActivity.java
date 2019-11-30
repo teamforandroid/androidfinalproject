@@ -1,3 +1,8 @@
+/**
+ * Assignment : final project - recipe
+ * Author ：zheyuan li
+ * date : Nov 29 2019
+ */
 package android.example.finalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -51,19 +56,19 @@ public class RecipeDetailActivity extends AppCompatActivity {
                 recipejumpUrl(url);
             }
         });
-
-//get image---can not get image
-//        byte[] byteArray =getIntent().getByteArrayExtra("image");
-//        image = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
-//        imageView.setImageBitmap(image);
-
-      //  findViewById(R.id.button_longin).setOnClickListener(new View.OnClickListener() {
-        //    @Override
-        //    public void onClick(View view) {
-        //        Intent intent = new Intent(RecipeDetailActivity.this, SaveFavoriteActivity.class);
-               // intent.putExtra("email",emailAddressSaved);
-             //   startActivity(intent);
-          //  }
+      /*
+      //get image-
+        byte[] byteArray =getIntent().getByteArrayExtra("image");
+        image = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+        imageView.setImageBitmap(image);
+        findViewById(R.id.button_longin).setOnClickListener(new View.OnClickListener() {
+            @Override
+         public void onClick(View view) {
+         Intent intent = new Intent(RecipeDetailActivity.this, SaveFavoriteActivity.class);
+          intent.putExtra("email",emailAddressSaved);
+          startActivity(intent);
+           }
+       */
     }
 
     private void recipejumpUrl(String url) {

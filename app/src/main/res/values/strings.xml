@@ -26,8 +26,8 @@
     <string name="textView_message">Leave Message</string>
     <string name="textView_logo">LOGO</string>
     <string name="detail_button">View Detail</string>
-    <string name="help_detail">Version 0.9.\n
-         \nNews Headlines Api App By Jicheng Hu\n
+    <string name="help_detail">
+         \nVersion 0.9.\nNews Headlines Api App By Jicheng Hu\n
          \nApp displays recent news and the news can be saved.\n
          \nThe user can search for articles related to a given topic.</string>
     <string name="help_detail2">Uer can save article they like.</string>
@@ -63,5 +63,13 @@
     <string name="deleteFavourites">Delete</string>
     <string name="gomyfave"> My favourite recipe</string>
     <string name="recipe_hepl_sring"> help</string>
+
+    <string name="recipe_helpmenu_title">Help</string>
+    <string name="recipe_help_string">\nVersion 0.9.\n
+          \n Rceipe Api App By Zheyuan Li\n
+         \nApp displays recipe.\n
+         \nThe user can search for recipe related to a given topic</string>
+    <string name="recipe_toast_string">\"please enter the food that you want to search.\"</string>
+    <string name="recipe_gohome_string">Go home</string>
 
 </resources>
