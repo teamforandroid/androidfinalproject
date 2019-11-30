@@ -158,7 +158,7 @@ public class Charger_stations extends AppCompatActivity {
 
                 listview.setOnItemClickListener((parent, view, position, id) -> {
 
-                    Intent i = new Intent(Charger_stations.this, ChargerStationDetail.class);
+                    Intent i = new Intent(Charger_stations.this, ChargerStationDetailFragment.class);
                     i.putExtra("title", chargerList.get(position).get(KEY_TITLE));
                     i.putExtra("latitude", chargerList.get(position).get(KEY_LATITUDE));
                     i.putExtra("longitude", chargerList.get(position).get(KEY_LONGITUDE));

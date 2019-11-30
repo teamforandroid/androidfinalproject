@@ -68,5 +68,6 @@
     <string name="deleteFavourites">删除</string>
     <string name="gomyfave"> 最喜欢的食谱</string>
     <string name="recipe_hepl_sring"> 帮助</string>
+    <string name="charger_Iwanttocharge">我要在这里充电!</string>
 
 </resources>
