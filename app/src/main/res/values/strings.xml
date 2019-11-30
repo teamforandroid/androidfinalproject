@@ -20,9 +20,10 @@
     <string name="textView_logo">LOGO</string>
     <string name="detail_button">View Detail</string>
     <string name="help_detail">Version 0.9.\n
-         \nNews Headlines Api App By Jicheng Hu
+         \nNews Headlines Api App By Jicheng Hu\n
          \nApp displays recent news and the news can be saved.\n
          \nThe user can search for articles related to a given topic.</string>
+    <string name="help_detail2">Uer can save article they like.</string>
 
     <string name="rating">Enter your ratings here</string>
     <string name="charger_help_author">Author\'s Name: Jie Zhang</string>

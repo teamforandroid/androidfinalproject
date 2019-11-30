@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="textView_charge">电动汽车充电站</string>
+
+    <string name="textView_charge">电动汽车充电站取景器</string>
     <string name="textView_currency">外币兑换 </string>
     <string name="textView_menu">配方搜索引擎</string>
     <string name="textView_news">新闻头条 </string>
-    <string name="menu_title_charger">电动汽车充电站</string>
+    <string name="menu_title_charger">电动汽车充电站取景器</string>
+
     <string name="menu_title_currency">外币兑换</string>
     <string name="menu_title_recipe">配方搜索引擎</string>
     <string name="menu_title_news">新闻头条</string>
@@ -21,9 +23,10 @@
     <string name="textView_logo">商标</string>
     <string name="detail_button">详细信息</string>
     <string name="help_detail">版本 0.9.\n
-         \n新闻头条 Jicheng Hu
+         \n新闻头条 Jicheng Hu\n
          \n应用程序显示最近的新闻，可以保存新闻。\n
          \n用户可以搜索与给定主题相关的文章。</string>
+    <string name="help_detail2">您可以保存自己喜欢的文章.</string>
 
 
     <string name="rating">在这里输入您的评分</string>
